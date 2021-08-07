@@ -8,7 +8,7 @@
         public name: string, 
         public surname: string, 
         public birthdate: string, 
-        public photoUrl: String = "/src/assets/img_avatar.png"
+        public photoUrl: string = "/src/assets/img_avatar.png"
         )
         {}
 

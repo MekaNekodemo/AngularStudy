@@ -10,10 +10,14 @@
 
     [data]="dropdownList" 
     [(ngModel)]="selectedItems" 
-    [settings]="dropdownSettings" 
-    >
+    [settings]="dropdownSettings"
+    (onSelect)="updateFilter()" 
+    (onDeSelect)="updateFilter()"
+    (onSelectAll)="updateFilter()"
+    (onDeSelectAll)="updateFilter()"
+    
 
-</angular2-multiselect>
+    ></angular2-multiselect>
 
 <h4>Employees with birthdays fitting the above filter!</h4>
 

@@ -2,7 +2,7 @@ import { Employee } from "./Employee";
 
 export class Department {
 
-    employeeIds: Array<String> = new Array<String>();
+    employeeIds: Array<string> = new Array<string>();
 
     name: string;
 
@@ -16,7 +16,7 @@ export class Department {
     }
 
 
-    addEmployee(employeeId: String ){
+    addEmployee(employeeId: string ){
         this.employeeIds.push(employeeId);
     }
 
