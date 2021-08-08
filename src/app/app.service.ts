@@ -15,15 +15,24 @@ export class AppService {
 
     let employeesAsJSON = JSON.stringify(this.employees);
 
-    let employeesFromJSON = JSON.parse(employeesAsJSON)
+    console.log(employeesAsJSON)
+
+    let employeesFromJSON: Array<any> = JSON.parse(employeesAsJSON)
+
+    employeesFromJSON.forEach(item =>{
+      console.log(item.birthdate)
+    })
 
     
-    employeesFromJSON.forEach((employee: Employee) => {
+    employeesFromJSON.forEach((obj) => {
+      let employee: Employee = new Employee(obj.id, obj.name, obj.surname, obj.birthdate, obj.photoUrl);
       listOfEmployees.push(employee)
     });
 
     return listOfEmployees;
   }
+
+
 
 
 
@@ -39,8 +48,6 @@ export class AppService {
       listOfDepartments.push(department)
     });
 
-    
-
     return listOfDepartments;
   }
 
@@ -49,77 +56,77 @@ export class AppService {
       id:"1",
       name: "Lisa",
       surname: "Hansen",
-      birthdate:"07/08/1988",
+      birthdate:"1988-08-07",
       photoUrl: ""
     },
     {
       id:"2",
       name: "Lars",
       surname: "Larsen",
-      birthdate:"08/08/1966",
+      birthdate:"1966-08-08",
       photoUrl: ""
     },
     {
       id:"3",
       name: "Stine",
       surname: "Stinesen",
-      birthdate:"09/08/1970",
+      birthdate:"1970-08-09",
       photoUrl: ""
     },
     {
       id:"4",
       name: "Torben",
       surname: "Torsen",
-      birthdate:"07/09/1966",
+      birthdate:"1966-09-07",
       photoUrl: ""
     },
     {
       id:"5",
       name: "Agate",
       surname: "Agnete",
-      birthdate:"20/08/2000",
+      birthdate:"2000-08-20",
       photoUrl: ""
     },
     {
       id:"6",
       name: "Børge",
       surname: "Borvard",
-      birthdate:"21/08/2001",
+      birthdate:"2001-08-21",
       photoUrl: ""
     },
     {
       id:"7",
       name: "Britta",
       surname: "Hansen",
-      birthdate:"16/09/1992",
+      birthdate:"1992-09-16",
       photoUrl: ""
     },
     {
       id:"8",
       name: "Mogens",
       surname: "Hansen",
-      birthdate:"10/08/1988",
+      birthdate:"1988-08-10",
       photoUrl: ""
     },
     {
       id:"9",
       name: "Kristine",
       surname: "Christensen",
-      birthdate:"07/12/2000",
+      birthdate:"2000-12-07",
       photoUrl: ""
     },
     {
       id:"10",
       name: "Svend",
       surname: "Ole Rasmussen",
-      birthdate:"03/02/1999",
+      birthdate:"1999-12-07",
       photoUrl: ""
     },
     {
       id:"11",
       name: "Olga",
       surname: "Dine",
-      birthdate:"30/08/1986",
+      birthdate:"1986-08-30",
       photoUrl: ""
     }
   ]

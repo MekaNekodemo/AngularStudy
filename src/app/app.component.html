@@ -1,20 +1,20 @@
 <h2>{{title}}</h2>
 
-<input type="checkbox" name="checkbox" [(ngModel)]="currentWeek" (change) = "updateFilter()"> 
+<input type="checkbox" [(ngModel)]="checkWeek" (change) = "updateEmployeeList()"> 
 <label>This week</label>
 
-<input type="checkbox" [(ngModel)]="currentMonth" (change) = "updateFilter()" > 
+<input type="checkbox" [(ngModel)]="checkMonth" (change) = "updateEmployeeList()" > 
 <label>This month</label>
 
 <angular2-multiselect 
 
     [data]="dropdownList" 
-    [(ngModel)]="selectedItems" 
+    [(ngModel)]="selectedDepartments" 
     [settings]="dropdownSettings"
-    (onSelect)="updateFilter()" 
-    (onDeSelect)="updateFilter()"
-    (onSelectAll)="updateFilter()"
-    (onDeSelectAll)="updateFilter()"
+    (onSelect)="updateEmployeeList()" 
+    (onDeSelect)="updateEmployeeList()"
+    (onSelectAll)="updateEmployeeList()"
+    (onDeSelectAll)="updateEmployeeList()"
     
 
     ></angular2-multiselect>
@@ -22,11 +22,11 @@
 <h4>Employees with birthdays fitting the above filter!</h4>
 
 <ul>
-  <li *ngFor="let employee of listOfEmployees">
-    {{employee.id}}  
-    {{employee.name}}
+  <li *ngFor="let employee of listView_Employees">
+    Id: {{employee.id}}  
+    Name: {{employee.name}}
     {{employee.surname}}
-    {{employee.birthdate}}
+    Birthday: {{employee.birthdate.toDateString()}}
       
   </li>
 
